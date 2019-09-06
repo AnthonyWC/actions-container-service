@@ -15,12 +15,12 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Build the Docker container image
-      run: docker build -t docker.pkg.github.com/pied-piper-inc/container-service/app-services:latest .
+      run: docker build -t docker.pkg.github.com/chrispat/actions-container-service/app-services:latest .
 
     - name: Push the image to GPR
       run: |
         docker login docker.pkg.github.com -u publisher -p "${GITHUB_PACKAGE_REGISTRY_TOKEN}"
-        docker push docker.pkg.github.com/pied-piper-inc/container-service/app-services:latest
+        docker push docker.pkg.github.com/chrispat/actions-container-service/app-services:latest
       env:
         GITHUB_PACKAGE_REGISTRY_TOKEN: ${{ secrets.GITHUB_PACKAGE_REGISTRY_TOKEN }}
 
