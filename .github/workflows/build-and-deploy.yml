@@ -6,7 +6,8 @@ on:
   push:
     branches:
     - master
-
+env:
+  DOCKER_CLI_EXPERIMENTAL: enabled
 jobs:
   build:
     name: Build
